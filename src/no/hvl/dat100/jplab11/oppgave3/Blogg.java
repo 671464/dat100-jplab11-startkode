@@ -79,8 +79,6 @@ public class Blogg {
 	@Override
 	public String toString() {
 		//throw new UnsupportedOperationException(TODO.method());
-		//output: 2\nTEKST\n1\nOle Olsen\n23-10\n0\nen tekst\nBILDE\n2\nOline Olsen\n24-10\n0\net bilde\nhttp://www.picture.com/oo.jpg\n
-		//første linje er antall objekt
 		String str = "";
 		str = getAntall() + "\n";
 		for (int i=0; i<getAntall(); i++) {
