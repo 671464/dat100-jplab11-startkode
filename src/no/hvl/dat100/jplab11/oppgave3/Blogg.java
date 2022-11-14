@@ -59,7 +59,7 @@ public class Blogg {
 		//throw new UnsupportedOperationException(TODO.method());
 		//3d, returner true om der er ledig plass. false ellers
 		
-		if(nesteledig < getAntall())
+		if(nesteledig < innleggtabell.length)
 			return true;
 		else
 			return false;
@@ -67,7 +67,13 @@ public class Blogg {
 	
 	public boolean leggTil(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		boolean ny = finnInnlegg(innlegg) == -1;
+		if (ny && nesteledig < innleggtabell.length) {
+			innleggtabell[nesteledig] = innlegg;
+			nesteledig ++;
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
