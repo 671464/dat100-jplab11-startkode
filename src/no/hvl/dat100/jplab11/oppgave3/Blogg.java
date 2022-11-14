@@ -90,12 +90,28 @@ public class Blogg {
 	// valgfrie oppgaver nedenfor
 	
 	public void utvid() {
-		throw new UnsupportedOperationException(TODO.method());
+		//throw new UnsupportedOperationException(TODO.method());
+		//oppretter ny tabell som er doble størrelsen
+		int tablengde = innleggtabell.length * 2;
+		Blogg ny_blogg = new Blogg(tablengde);
+		Innlegg[] tablogg = ny_blogg.getSamling();
+		
+		for(int i=0; i<getAntall(); i++) {
+			tablogg[i] = innleggtabell[i];
+		}
+		
+		this.innleggtabell = tablogg;
 	}
 	
 	public boolean leggTilUtvid(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		//throw new UnsupportedOperationException(TODO.method());
+		//legger til nytt innlegg, dersom ikke plass utvid tabell og legg til i den nye
+		if(leggTil(innlegg) == false) {
+			utvid();
+			return leggTil(innlegg);
+		}
+		return leggTil(innlegg);
 		
 	}
 	
