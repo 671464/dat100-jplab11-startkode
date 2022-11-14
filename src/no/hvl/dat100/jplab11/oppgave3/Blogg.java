@@ -30,7 +30,13 @@ public class Blogg {
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		//3e
+		int id = finnInnlegg(innlegg);
+		if (id != -1) //id funnet
+			return true;
+		else 
+			return false;
+		//throw new UnsupportedOperationException(TODO.method());
 	}
 
 	public boolean ledigPlass() {
