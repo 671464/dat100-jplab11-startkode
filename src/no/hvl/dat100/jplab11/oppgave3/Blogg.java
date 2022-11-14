@@ -10,14 +10,16 @@ public class Blogg {
 
 	public Blogg() {
 		innleggtabell = new Innlegg[20];
+		nesteledig = 0;
 	}
 
 	public Blogg(int lengde) {
 		innleggtabell = new Innlegg[lengde];
+		nesteledig = 0;
 	}
 
 	public int getAntall() {
-		return innleggtabell.length;
+		return nesteledig;
 	}
 	
 	public Innlegg[] getSamling() {
@@ -44,7 +46,7 @@ public class Blogg {
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		//3e
+		//3f
 		int id = finnInnlegg(innlegg);
 		if (id != -1) //id funnet
 			return true;
@@ -54,7 +56,14 @@ public class Blogg {
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
+		//throw new UnsupportedOperationException(TODO.method());
+		//3d, returner true om der er ledig plass. false ellers
+		
+		if(nesteledig < getAntall())
+			return true;
+		else
+			return false;
+		
 
 	}
 	
