@@ -63,8 +63,6 @@ public class Blogg {
 			return true;
 		else
 			return false;
-		
-
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
